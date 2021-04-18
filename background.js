@@ -11,6 +11,9 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 let user = {};
 let userID;
+let filters;
+let chosen;
+let process;
 
 chrome.identity.getAuthToken({ interactive: true }, function(token) {
     console.log("TOKEN: ", token);
@@ -28,16 +31,62 @@ chrome.identity.getAuthToken({ interactive: true }, function(token) {
     .then(function(jsonResponse) {
         user = jsonResponse;
         userID = user.id;
+        // console.log(user);
     });
 });
 
 chrome.runtime.onMessage.addListener(
     function(request, sender, sendResponse) {
-      if (request.command == "getUserInfo") {
-        chrome.runtime.sendMessage(
-            {command: "email", userEmail: user.email}
-        );
-      }
+        if (request.command == "getUserInfo") {
+            const userEmail = user.email;
+            const userVal = userEmail.substring(0, userEmail.indexOf('@'));
+            const url = `http://localhost:9090/api/user/${userVal}`;
+            fetch(url, {
+                headers:  { 
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json',
+                    "Access-Control-Allow-Origin" : "*", 
+                    "Access-Control-Allow-Credentials" : true 
+                }
+            }).then((response) => {
+                response.json().then((data) => {
+                    console.log(data);
+                    const { filterTypes, chosenFilter, processType } = data.result;
+                    filters = filterTypes;
+                    chosen = chosenFilter;
+                    process = processType;
+                });
+            }).catch(error => {
+                console.log("Error fetching response: ", error);
+            });
+            return true;  // respond asynchronously
+        } else if (request.command == "updateFilters") {
+            const toggleFilters = request.toggleStates.slice(0, 5);
+            let toggleStringArr = [];
+            for (let i=0; i < toggleFilters.length; i++){
+                if (toggleFilters[i] !== "") {
+                    toggleStringArr.push(toggleFilters[i]);
+                }
+            }
+            const toggleString = toggleStringArr.toString();
+            const userVal = user.email.substring(0, user.email.indexOf('@'));
+            const url = `http://localhost:9090/api/user/${userVal}`;
+            const bodyData = JSON.stringify({"processType": process, "filterTypes": toggleString, "chosenFilter": chosen });
+            fetch(url, {
+                method: 'PUT', 
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json',
+                },
+                body: bodyData
+            }).then((response) => {
+                response.json().then((data) => {
+                    console.log('data', data);
+                })
+            }).catch(error => {
+                console.log("Error fetching response: ", error);
+            });
+        }
     }
 );
 
