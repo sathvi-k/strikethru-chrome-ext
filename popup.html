@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<link rel="stylesheet" type="text/css" href="popup.css" />
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Monoton&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Averia+Sans+Libre&display=swap" rel="stylesheet">
+<html>
+    <body>
+        <div class="container">
+            <div class="title">Strikethru</div>
+            <button id="sign-in">sign in</button>
+            <div class="word-sets">Strikethru Word Sets</div>
+            <div id="user"></div>
+
+            <div class="toggles">
+                <div id="toggle-row1">
+                    <div class="toggle-label">Homophobic Word Set</div>
+                    <label class="switch">
+                        <input id="toggle1" type="checkbox">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+                <div id="toggle-row2">
+                    <div class="toggle-label">Transphobic Word Set</div>
+                    <label class="switch">
+                        <input id="toggle2" type="checkbox">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+                <div id="toggle-row3">
+                    <div class="toggle-label">Homophobic Word Set</div>
+                    <label class="switch">
+                        <input id="toggle3" type="checkbox">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+                <div id="toggle-row4">
+                    <div class="toggle-label">Racist Word Set</div>
+                    <label class="switch">
+                        <input id="toggle4" type="checkbox">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+                <div id="toggle-row5">
+                    <div class="toggle-label">Sexist Word Set</div>
+                    <label class="switch">
+                        <input id="toggle5" type="checkbox">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+                <div id="toggle-row6">
+                    <div class="toggle-label">Chosen Word Set</div>
+                    <label class="switch">
+                        <input id="toggle5" type="checkbox">
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+                <div className="custom-input">
+                    <input id="add-word" type="text"/>
+                    <div className="input-button-wrapper">
+                      <button type="button" id="button-rounded" className="input-button">Add word</button>
+                    </div>
+                  </div>
+                <button id="reveal-btn">reveal hidden words</button>
+            </div>
+        <script src="popup.js"></script> 
+    </body>
+</html>

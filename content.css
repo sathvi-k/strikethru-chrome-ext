@@ -1,0 +1,14 @@
+.blurredBackground {
+    filter: blur(6px);
+    -webkit-filter: blur(6px);
+    -moz-filter: blur(6px);
+    -o-filter: blur(6px);
+    -ms-filter: blur(6px);
+    height: 100%;
+    width: 100%;
+}
+
+.blurWords {
+    filter: blur(6px);
+    -webkit-filter: blur(6px);
+}

@@ -1,0 +1,34 @@
+{
+    "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAw93wFQysmC5AxrX9d0x1tLA2q66yc581C+0bfpbc4PR1D7IRolCe7WFciM3EV8t5jZDTp8y3DHPXCYdXDlfOimHfZh5C3CBDQY5DFo3/iyxoUSlyvFwa7xCCTxEwgZeDIMV99ua+S7s0oT/WXnJuV4rsEcH4Ob7z3b10ZXJ074qMZwEY4HjOcTNN/yotPZR+cgDEsunGg7bFbGupXxiyZ7bUYYtCVUbdyLwlN8QyCO8ckieQSk1Vw4vV+CwmZQFypiMWCbH1B358/LNGFCo0yTeGglrs2yccRRhtczo4U79DUaNM/cpccz6CgAGuXHPylB3A+tyR/r1llcNJ390FhQIDAQAB",
+    "manifest_version": 2,
+    "name": "Strikethru",
+    "description": "This extension allows you to block out hate speech on a website",
+    "version": "1.0",
+    "background": {
+        "page": "background.html"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "<all_urls>"
+            ],
+            "js": ["jquery-3.6.0.min.js", "content.js"],
+            "css": ["content.css"]
+        }
+    ],
+    "browser_action": {
+        "default_popup": "popup.html"
+    },
+    "permissions": [
+        "tabs",
+        "http://*/",
+        "https://*/",
+        "identity",
+        "storage"
+    ],
+    "oauth2": {
+        "client_id": "84659850997-q52g2tqpqhcfgmnccf3653tbdsqd4tnj.apps.googleusercontent.com",
+        "scopes": ["https://www.googleapis.com/auth/userinfo.email"]
+    },
+    "content_security_policy": "script-src 'self' https://cdn.firebase.com https://www.gstatic.com/ https://*.firebaseio.com https://apis.google.com; object-src 'self'"
+}

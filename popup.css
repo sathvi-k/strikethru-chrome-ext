@@ -1,0 +1,346 @@
+body {
+    background-image: url('./extension_background.png');
+    background-size:100% 100%;
+    min-width: 350px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.title {
+    font-family: 'Monoton', cursive;
+    position: absolute;
+    width: 168px;
+    height: 37px;
+    left: 16px;
+    top: 9px;
+    font-family: Monoton;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 37px;
+    color: #F2F2F2;
+}
+
+.word-sets {
+    font-family: 'Averia Sans Libre', cursive;
+    position: absolute;
+    width: 170px;
+    height: 22px;
+    left: 18px;
+    top: 62px;
+    font-family: Averia Sans Libre;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 22px;
+    color: #F2F2F2;
+}
+
+.toggles {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.toggle-label {
+    position: static;
+    width: 135px;
+    height: 17px;
+    left: 0px;
+    top: 3.5px;
+    font-family: Averia Sans Libre;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    color: #F2F2F2;
+}
+
+#toggle-row1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px;
+    position: absolute;
+    width: 316px;
+    height: 24px;
+    left: 18px;
+    top: 100px;
+}
+
+#toggle-row2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px;
+    position: absolute;
+    width: 316px;
+    height: 24px;
+    left: 18px;
+    top: 132px;
+}
+
+#toggle-row3 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px;
+    position: absolute;
+    width: 316px;
+    height: 24px;
+    left: 18px;
+    top: 164px;
+}
+
+#toggle-row4 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px;
+    position: absolute;
+    width: 316px;
+    height: 24px;
+    left: 18px;
+    top: 196px;
+}
+
+#toggle-row5 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px;
+    position: absolute;
+    width: 316px;
+    height: 24px;
+    left: 18px;
+    top: 228px;
+}
+
+#toggle-row6 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px;
+    position: absolute;
+    width: 316px;
+    height: 24px;
+    left: 18px;
+    top: 260px;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 24px;
+}
+  
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: transparent;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border: 2px solid #F2F2F2;
+    box-sizing: border-box;
+    border-radius: 90px;
+}
+  
+.slider:before {
+    position: absolute;
+    content: "";
+    width: 24px;
+    height: 24px;
+    left: -2px;
+    bottom: -2px;
+    background-color: #F2F2F2;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: #F2F2F2;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px  #F2F2F2;
+}
+  
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+    border: 2px solid #F2F2F2;
+    box-sizing: border-box;
+    filter: drop-shadow(-2px 2px 6px rgba(0, 0, 0, 0.25));
+    fill: 0;
+}
+
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+#reveal-btn {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    position: absolute;
+    width: 167px;
+    height: 40px;
+    left: 92px;
+    top: 358px;
+    background-color: transparent;
+    border: 2px solid #F2F2F2;
+    border-radius: 90px;
+    font-family: Averia Sans Libre;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    color: #F2F2F2;
+}
+
+#reveal {
+    position: static;
+    width: 127px;
+    height: 17px;
+    left: 20px;
+    top: 11.5px;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    margin: 0px 10px;
+}
+
+#sign-in {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    position: absolute;
+    width: 86px;
+    height: 40px;
+    left: 252px;
+    top: 8px;
+    border: 2px solid #F2F2F2;
+    background-color: transparent;
+    border-radius: 90px;
+    font-family: Averia Sans Libre;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    color: #F2F2F2;
+}
+
+#add-word {
+    position: absolute;
+    width: 316px;
+    height: 40px;
+    left: 18px;
+    top: 302px;
+    border: 2px solid #F2F2F2;
+    box-sizing: border-box;
+    border-radius: 90px;
+    background-color: transparent;
+    font-family: 'Averia Sans Libre', cursive;
+    color: #F2F2F2;
+}
+
+.custom-input{
+    position: relative;
+    height: 40px;
+    margin-left: 55px;
+    margin-bottom: 24px;
+}
+
+.input-button-wrapper{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    left: 392px;
+    width: 94px;
+    height: 40px;
+    position: relative;
+  }
+
+#button-rounded{
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 23px;
+    position: absolute;
+    top: 302px;
+    left: 240px;
+    width: 94px;
+    height: 40px;
+    box-sizing: border-box;
+    border-radius: 0px 90px 90px 0px;
+}
+
+#button-rounded {
+    font-family: 'Averia Sans Libre', cursive;
+    border: none;
+    background: none;
+    outline: none;
+    color: black;
+    mix-blend-mode: screen;
+}
+
+#button-rounded::before {
+    position: absolute;
+    font-family: 'Averia Sans Libre', cursive;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 17px;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: #F2F2F2;;
+    content: '';
+    mix-blend-mode: color-burn;
+    border-radius: 0px 90px 90px 0px;
+}
+
+#button-rounded:hover{
+    cursor: pointer;
+}
